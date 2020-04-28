@@ -15,7 +15,7 @@
         }
     },
     "variables": {
-        "deploymentUrl": "[uri(deployment().properties.templateLink.uri)]",
+        "deploymentUrl": "[deployment().properties.template.uri]",
         "sqlServerResourceId": "[resourceId('Microsoft.Sql/servers', parameters('sqlServerName'))]",
         "sqlServerDatabaseName": "demo-sqldb",
         "vnetName": "demo-vnet",
