@@ -15,7 +15,7 @@
         }
     },
     "variables": {
-        "deploymentUrl": "[deployment().properties.templateLink.uri]",
+        "deploymentUrl": "https://raw.githubusercontent.com/mwangilk/mslearn-n-tier-architecture/master/Deployment/azuredeploy.json",
         "sqlServerResourceId": "[resourceId('Microsoft.Sql/servers', parameters('sqlServerName'))]",
         "sqlServerDatabaseName": "demo-sqldb",
         "vnetName": "demo-vnet",
