@@ -11,7 +11,7 @@
         },
         "sqlServerName": {
             "type": "string",
-            "defaultValue": "[concat('demo-dbserver-', uniqueString(resourceGroup().id))]"
+            "defaultValue": "[concat('sm-dbserver-', uniqueString(resourceGroup().id))]"
         }
     },
     "variables": {
