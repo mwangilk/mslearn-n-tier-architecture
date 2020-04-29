@@ -11,27 +11,27 @@
         },
         "sqlServerName": {
             "type": "string",
-            "defaultValue": "[concat('demo-dbserver-', uniqueString(resourceGroup().id))]"
+            "defaultValue": "[concat('Smarttech-dbserver-', uniqueString(resourceGroup().id))]"
         }
     },
     "variables": {
         "deploymentUrl": "[deployment().properties.templateLink.uri]",
         "sqlServerResourceId": "[resourceId('Microsoft.Sql/servers', parameters('sqlServerName'))]",
-        "sqlServerDatabaseName": "demo-sqldb",
-        "vnetName": "demo-vnet",
+        "sqlServerDatabaseName": "Smarttech-sqldb",
+        "vnetName": "vnet-Awesomefuture",
         "vnetAddressPrefix": "10.1.0.0/16",
         "vnetResourceId": "[resourceId('Microsoft.Network/virtualNetworks', variables('vnetName'))]",
-        "webNSGName": "demo-web-nsg",
+        "webNSGName": "webserver-nsg",
         "webNSGResourceId": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('webNSGName'))]",
-        "webVMName": "demo-web-vm",
-        "webVMNicName": "demo-web-vm-nic",
-        "webVMNicPIPName": "demo-web-vm-nic-pip",
-        "webSubnetName": "demo-web-subnet",
+        "webVMName": "webserver-vm",
+        "webVMNicName": "webserver-vm-nic",
+        "webVMNicPIPName": "webserver-vm-nic-pip",
+        "webSubnetName": "Subnet_WebTier",
         "webSubnetPrefix": "10.1.0.0/24",
-        "bizVMName": "demo-biz-vm",
-        "bizVMNicName": "demo-biz-vm-nic",
-        "bizNSGName": "demo-biz-nsg",
-        "bizSubnetName": "demo-biz-subnet",
+        "bizVMName": "Appserver-vm",
+        "bizVMNicName": "Appserver-biz-vm-nic",
+        "bizNSGName": "Appserver-nsg",
+        "bizSubnetName": "Subnet_AppTier",
         "bizSubnetPrefix": "10.1.1.0/24",
         "bizNSGResourceId": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('bizNSGName'))]",
         "webVMNicResourceId": "[resourceId('Microsoft.Network/networkInterfaces', variables('webVMNicName'))]",
@@ -83,7 +83,7 @@
         },
         {
             "type": "Microsoft.Sql/servers/virtualNetworkRules",
-            "name": "[concat(parameters('sqlServerName'), '/demo-vnet-biz-rule')]",
+            "name": "[concat(parameters('sqlServerName'), '/vnet-Awesomefuture-biz-rule')]",
             "apiVersion": "2015-05-01-preview",
             "location": "[resourceGroup().location]",
             "properties": {
